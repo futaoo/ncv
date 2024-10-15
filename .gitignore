@@ -1,0 +1,2 @@
+# Ignore catalog files in any subdirectory
+**/catalog*.xml
