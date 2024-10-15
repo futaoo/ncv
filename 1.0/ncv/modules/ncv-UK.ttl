@@ -32,14 +32,14 @@ ncv-UK:hasMandatoryAttribute rdf:type owl:ObjectProperty ;
                                                                     ] .
 
 
-###  http://futaoo.github.io/ncv/ncv-UK/ConservationObjective_UK
-ncv-UK:ConservationObjective_UK rdf:type owl:Class ;
-                                rdfs:subClassOf <http://futaoo.github.io/ncv/ConservationObjective> ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty <http://futaoo.github.io/ncv/hasAttribute> ;
-                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                  owl:onClass <http://futaoo.github.io/ncv/Attribute>
-                                                ] .
+###  http://futaoo.github.io/ncv/ncv-UK/ConservationObjective
+ncv-UK:ConservationObjective rdf:type owl:Class ;
+                             rdfs:subClassOf <http://futaoo.github.io/ncv/ConservationObjective> ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://futaoo.github.io/ncv/hasAttribute> ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass <http://futaoo.github.io/ncv/Attribute>
+                                             ] .
 
 
 ###  http://futaoo.github.io/ncv/ncv-UK/MandatoryAttribute

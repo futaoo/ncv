@@ -17,7 +17,7 @@
 
 ###  http://futaoo.github.io/ncv/ncv-IE/hasMeasure
 ncv-IE:hasMeasure rdf:type owl:ObjectProperty ;
-                  rdfs:domain ncv-IE:ConservationObjective_IE ;
+                  rdfs:domain ncv-IE:ConservationObjective ;
                   rdfs:range ncv-IE:Measure .
 
 
@@ -25,23 +25,23 @@ ncv-IE:hasMeasure rdf:type owl:ObjectProperty ;
 #    Classes
 #################################################################
 
-###  http://futaoo.github.io/ncv/ncv-IE/ConservationObjective_IE
-ncv-IE:ConservationObjective_IE rdf:type owl:Class ;
-                                rdfs:subClassOf <http://futaoo.github.io/ncv/ConservationObjective> ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty ncv-IE:hasMeasure ;
-                                                  owl:someValuesFrom ncv-IE:Measure
-                                                ] ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty <http://futaoo.github.io/ncv/hasAttribute> ;
-                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                  owl:onClass <http://futaoo.github.io/ncv/Attribute>
-                                                ] ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty <http://futaoo.github.io/ncv/hasTarget> ;
-                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                  owl:onClass <http://futaoo.github.io/ncv/Target>
-                                                ] .
+###  http://futaoo.github.io/ncv/ncv-IE/ConservationObjective
+ncv-IE:ConservationObjective rdf:type owl:Class ;
+                             rdfs:subClassOf <http://futaoo.github.io/ncv/ConservationObjective> ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty ncv-IE:hasMeasure ;
+                                               owl:someValuesFrom ncv-IE:Measure
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://futaoo.github.io/ncv/hasAttribute> ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass <http://futaoo.github.io/ncv/Attribute>
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://futaoo.github.io/ncv/hasTarget> ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onClass <http://futaoo.github.io/ncv/Target>
+                                             ] .
 
 
 ###  http://futaoo.github.io/ncv/ncv-IE/Measure
