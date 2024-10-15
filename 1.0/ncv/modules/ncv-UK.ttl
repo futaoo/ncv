@@ -1,16 +1,19 @@
 @prefix : <http://futaoo.github.io/ncv/ncv-UK#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ncv: <http://futaoo.github.io/ncv/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ncv-UK: <http://futaoo.github.io/ncv/ncv-UK/> .
 @base <http://futaoo.github.io/ncv/ncv-UK> .
 
 <http://futaoo.github.io/ncv/ncv-UK> rdf:type owl:Ontology ;
                                       owl:versionIRI <http://futaoo.github.io/ncv/ncv-UK/1.0.0> ;
                                       owl:imports <http://futaoo.github.io/ncv/1.0.0> ,
-                                                  <http://purl.org/dc/terms/> ,
+                                                  dct: ,
                                                   <http://www.w3.org/2004/02/skos/core> .
 
 #################################################################
@@ -19,7 +22,7 @@
 
 ###  http://futaoo.github.io/ncv/ncv-UK/hasMandatoryAttribute
 ncv-UK:hasMandatoryAttribute rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf <http://futaoo.github.io/ncv/hasAttribute> .
+                             rdfs:subPropertyOf ncv:hasAttribute .
 
 
 #################################################################
@@ -27,27 +30,27 @@ ncv-UK:hasMandatoryAttribute rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  http://futaoo.github.io/ncv/ConservationObjective
-<http://futaoo.github.io/ncv/ConservationObjective> rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty <http://futaoo.github.io/ncv/hasTarget> ;
-                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                      owl:onClass <http://futaoo.github.io/ncv/Target>
-                                                                    ] ;
-                                                    rdfs:label "Conservation Objective"@en .
+ncv:ConservationObjective rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty ncv:hasTarget ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass ncv:Target
+                                          ] ;
+                          rdfs:label "Conservation Objective"@en .
 
 
 ###  http://futaoo.github.io/ncv/ncv-UK/ConservationObjective
 ncv-UK:ConservationObjective rdf:type owl:Class ;
-                             rdfs:subClassOf <http://futaoo.github.io/ncv/ConservationObjective> ,
+                             rdfs:subClassOf ncv:ConservationObjective ,
                                              [ rdf:type owl:Restriction ;
-                                               owl:onProperty <http://futaoo.github.io/ncv/hasAttribute> ;
+                                               owl:onProperty ncv:hasAttribute ;
                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                               owl:onClass <http://futaoo.github.io/ncv/Attribute>
+                                               owl:onClass ncv:Attribute
                                              ] .
 
 
 ###  http://futaoo.github.io/ncv/ncv-UK/MandatoryAttribute
 ncv-UK:MandatoryAttribute rdf:type owl:Class ;
-                          rdfs:subClassOf <http://futaoo.github.io/ncv/Attribute> .
+                          rdfs:subClassOf ncv:Attribute .
 
 
 #################################################################
@@ -56,26 +59,26 @@ ncv-UK:MandatoryAttribute rdf:type owl:Class ;
 
 ###  http://futaoo.github.io/ncv/ncv-UK/Maintain
 ncv-UK:Maintain rdf:type owl:NamedIndividual ,
-                         <http://futaoo.github.io/ncv/TargetDriver> ,
-                         <http://www.w3.org/2004/02/skos/core#Concept> ;
-                <http://www.w3.org/2004/02/skos/core#definition> "Driver to maintain the current state of a conservation features."@en ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "Maintain"@en .
+                         ncv:TargetDriver ,
+                         skos:Concept ;
+                skos:definition "Driver to maintain the current state of a conservation features."@en ;
+                skos:prefLabel "Maintain"@en .
 
 
 ###  http://futaoo.github.io/ncv/ncv-UK/Recover
 ncv-UK:Recover rdf:type owl:NamedIndividual ,
-                        <http://futaoo.github.io/ncv/TargetDriver> ,
-                        <http://www.w3.org/2004/02/skos/core#Concept> ;
-               <http://www.w3.org/2004/02/skos/core#definition> "Driver to recover degraded conservation features."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "Recover"@en .
+                        ncv:TargetDriver ,
+                        skos:Concept ;
+               skos:definition "Driver to recover degraded conservation features."@en ;
+               skos:prefLabel "Recover"@en .
 
 
 ###  http://futaoo.github.io/ncv/ncv-UK/Restore
 ncv-UK:Restore rdf:type owl:NamedIndividual ,
-                        <http://futaoo.github.io/ncv/TargetDriver> ,
-                        <http://www.w3.org/2004/02/skos/core#Concept> ;
-               <http://www.w3.org/2004/02/skos/core#definition> "Driver to restore degraded conservation features."@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "Restore"@en .
+                        ncv:TargetDriver ,
+                        skos:Concept ;
+               skos:definition "Driver to restore degraded conservation features."@en ;
+               skos:prefLabel "Restore"@en .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
